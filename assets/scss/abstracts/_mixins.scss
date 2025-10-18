@@ -3,9 +3,10 @@
 
 @use 'variables' as *;
 @use 'functions' as *;
+@use 'sass:map';
 
 @function _breakpoint($key) {
-	@return map-get($breakpoints, $key);
+	@return map.get($breakpoints, $key);
 }
 
 @mixin respond-to($break, $type: 'min') {
@@ -27,13 +28,6 @@
   gap: $gap;
 }
 
-@mixin flex-center($direction: row, $gap: 0) {
-	display: flex;
-	flex-direction: $direction;
-	align-items: center;
-	justify-content: center;
-	gap: $gap;
-}
 @mixin flex-center($direction: row, $gap: 0) {
 	display: flex;
 	flex-direction: $direction;

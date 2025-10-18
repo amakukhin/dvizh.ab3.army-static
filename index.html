@@ -33,8 +33,8 @@
 <path d="M68.5043 33.5401C68.5043 28.224 63.4042 27.1165 63.4042 27.1165L63.3069 27.0884C63.9114 26.9 68.1482 25.4081 67.9587 20.4254C67.7999 16.2346 64.2879 13.3907 59.2852 13.2685V13.2557H45.3604C41.5001 13.2532 39.7992 13.2532 39.7992 13.2532V15.9418L41.3311 17.4313L41.3234 24.3947H32.5064L31.3793 23.2948C31.3793 23.2948 31.4254 16.3263 31.3614 12.7771H19.8343C20.3748 13.3627 21.0101 13.8286 21.5403 14.4626H5.907C5.9403 18.0449 5.97104 22.2611 5.97104 22.2153C5.97104 26.4621 5.4869 29.632 5.4869 29.632L4.00375 28.2571C4.00375 28.2571 3.97301 29.8815 3.49912 31.9794L0 32.01V46.5148H9.98247L9.97735 41.1427H17.1728L18.9813 42.6092L27.0964 42.599V47.4212L27.8034 48.1036H29.8859L28.1748 46.4359L29.3403 46.4283L31.0719 48.101H33.1545L31.4434 46.4334L32.6089 46.4257L34.3405 48.0985H36.4231L34.7119 46.4308L35.8775 46.4232L37.6091 48.0959V42.6958H43.1421L43.119 44.1521H52.8018L51.2982 42.5965C51.2982 42.5965 58.8395 42.5965 60.3226 42.5965C62.8611 42.5965 64.5492 41.9014 65.7455 41.2038C65.246 40.7098 64.4647 39.9842 64.4647 39.9842C64.4647 39.9842 68.512 38.729 68.512 33.5351L68.5043 33.5401ZM23.2899 33.5707V35.0321L20.59 35.0372L18.7994 33.586H14.8469C16.0713 26.2559 15.869 23.3967 15.869 23.3967L23.2873 23.389V33.5732L23.2899 33.5707ZM37.604 41.3794V33.479C37.604 33.479 35.0911 33.502 33.8333 33.4714C33.7616 33.4714 33.6899 33.4612 33.6284 33.4561C33.613 31.1163 33.6694 28.7994 33.6284 26.4621H41.308L41.3285 32.9927L43.0986 34.719C43.0986 34.719 43.1062 39.2382 43.1319 41.3794H37.5988H37.604ZM49.7971 23.9619V20.8073C51.3596 20.8073 54.0903 20.7539 55.8757 20.8073C56.844 20.8379 57.5023 21.701 57.5023 22.4215C57.5023 23.0351 57.0002 23.8779 56.1139 23.9008C53.3782 23.9721 50.0302 23.9568 49.7971 23.9619ZM51.3161 34.9252V31.8139H56.0934C56.0934 31.8139 55.3019 31.0501 54.8946 30.6453C55.3557 30.3932 56.7902 30.2175 57.5279 30.9839C58.5935 32.0889 57.4741 33.1608 57.4741 33.1608L59.2852 34.9252H51.3161Z" fill="#F6921E"/>
   </symbol>
 </svg>
-<header class="header">
- 
+<header class="header" data-aos="fade-down" data-aos-delay="100">
+
     <div class="container">
         <div class="col">
             <a href="#" class="logo" aria-label="Головна">
@@ -91,18 +91,18 @@
 
 <section id="hero" class="hero">
 
-<div class="rellax" data-rellax-speed="1" style="top:50%;left:-10%;z-index:4">
-  <div class="smoke__parallax">
-    <img src="assets/img/smoke.webp" style="transform:scale(1.4);" alt="">
+<div class="motion-parallax" data-motion-y-start="100" data-motion-y-end="-100" data-motion-speed="1" style="top:50%;left:-10%;z-index:4">
+  <div class="smoke__parallax" data-aos="fade" data-aos-delay="900">
+    <img style="transform:scale(1.4);" src="assets/img/smoke.webp" alt="">
   </div>
 </div>
-<div class="rellax" data-rellax-speed="-1" style="top:50%;right:0;z-index:4">
-  <div class="particles__parallax">
-    <img src="assets/img/particles.webp" style="transform:scaleX(-1) scale(1.5);" alt="">
+<div class="motion-parallax" data-motion-y-start="-60" data-motion-y-end="60" data-motion-speed="-2" style="top:50%;right:0;z-index:4">
+  <div class="particles__parallax" data-aos="fade" data-aos-delay="1100">
+    <img style="transform:scaleX(-1) scale(1.5);" src="assets/img/particles.webp" alt="">
   </div>
 </div>
     <div class="container">
-        <div class="col col--card">
+        <div class="col col--card" data-aos="fade-up" data-aos-delay="600">
         <article class="card card--hero">
           <div class="card__image">
             <img src="https://test-dvizh.ab3.army/wp-content/themes/ab3-dvizh/dist//images/banner-updated.webp" alt="">
@@ -132,7 +132,7 @@
             <a href="#" class="btn btn--default">Підтримати</a>
           </div>
 </article>        </div>
-        <footer>
+        <footer  data-aos="fade-up" data-aos-delay="800">
             <div class="col"><a class="hero__link" href="#about">Про подію <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.35386 13.6867C8.26011 13.7803 8.13303 13.8329 8.00053 13.8329C7.86803 13.8329 7.74095 13.7803 7.6472 13.6867L3.6472 9.68666C3.59807 9.64088 3.55867 9.58568 3.53134 9.52435C3.50401 9.46302 3.48932 9.39681 3.48814 9.32967C3.48695 9.26254 3.4993 9.19585 3.52445 9.13359C3.54959 9.07133 3.58702 9.01478 3.6345 8.9673C3.68198 8.91982 3.73854 8.88239 3.8008 8.85724C3.86306 8.8321 3.92974 8.81975 3.99688 8.82093C4.06401 8.82212 4.13022 8.83681 4.19156 8.86414C4.25289 8.89147 4.30809 8.93087 4.35386 8.97999L7.50053 12.1267L7.50053 2.66666C7.50053 2.53405 7.55321 2.40687 7.64698 2.31311C7.74074 2.21934 7.86792 2.16666 8.00053 2.16666C8.13314 2.16666 8.26031 2.21934 8.35408 2.31311C8.44785 2.40687 8.50053 2.53405 8.50053 2.66666L8.50053 12.1267L11.6472 8.97999C11.693 8.93087 11.7482 8.89147 11.8095 8.86414C11.8708 8.83681 11.937 8.82212 12.0042 8.82093C12.0713 8.81975 12.138 8.8321 12.2003 8.85724C12.2625 8.88239 12.3191 8.91982 12.3666 8.9673C12.414 9.01478 12.4515 9.07134 12.4766 9.13359C12.5018 9.19585 12.5141 9.26254 12.5129 9.32967C12.5117 9.39681 12.497 9.46302 12.4697 9.52435C12.4424 9.58568 12.403 9.64088 12.3539 9.68666L8.35386 13.6867Z" fill="white" stroke="white" stroke-width="0.2"/>
 </svg>
@@ -154,50 +154,54 @@
 </section><section id="about" class="about">
 <div class="container">
         <div class="about__content">
-            <svg data-aos="fade-up" data-aos-delay="100" class="about__logo" viewBox="0 0 132 51" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                <use href="#logo" xlink:href="#logo"></use>
-            </svg>
-            <p class="section__title section__title--medium text--center">
+            
+            <div data-aos="fade-up" style="display: flex; justify-content: center;">
+                <svg class="about__logo"  viewBox="0 0 132 51" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                    <use  href="#logo" xlink:href="#logo"></use>
+                </svg>
+            </div>
+            
+            <p data-aos="fade-up" data-aos-delay="300" class="section__title section__title--medium text--center">
                 Це не просто подія, це рух до перемоги! 
             </p>
-            <p class="section__title section__title--small text--center">
+            <p data-aos="fade-up" data-aos-delay="600" class="section__title section__title--small text--center">
                Бійці різних бригад та підрозділів діляться реальними історіями з фронту, відповідають на твої питання та мотивують приєднатися до боротьби. Від рекрутингу до гумору на війні — тут є все!
             </p>
-            <p class="text text--medium text--center"><strong>Вхід за донат на вході: рекомендований мінімальний донат - 500
+            <p data-aos="fade-up" data-aos-delay="900" class="text text--medium text--center"><strong>Вхід за донат на вході: рекомендований мінімальний донат - 500
                     грн</strong>
             </p>
         </div>
         <div class="grid grid--3">
-            <article class="card card--about">
+            <article class="card card--about" data-aos="fade-up" data-aos-delay="1200">
     <h3 class="card__label">Історії з фронту</h3>
     <p class="card__description">Реальні розповіді бійців про війну та життя.</p>
-    </article>
-<article class="card card--about">
+</article>
+<article class="card card--about" data-aos="fade-up" data-aos-delay="1500">
     <h3 class="card__label">Підтримка армії</h3>
     <p class="card__description">Твій донат — це допомога бригаді на передовій.</p>
-    </article>
-<article class="card card--about">
+</article>
+<article class="card card--about" data-aos="fade-up" data-aos-delay="1800">
     <h3 class="card__label">Q&amp;A з бійцями</h3>
     <p class="card__description">Став питання — отримай чесні відповіді.</p>
-    </article>
+</article>
         </div>
 
-       <div class="rellax" data-rellax-speed="2" style="right:-50%;bottom:-70%;z-index:4">
-  <div class="smoke-2__parallax">
-    <img src="assets/img/smoke-2.webp" style="transform:scale(1.2);" alt="">
+       <div class="motion-parallax" data-motion-y-start="100" data-motion-y-end="-100" data-motion-speed="2" style="right:-50%;bottom:-40%;z-index:4">
+  <div class="smoke-2__parallax" data-aos="fade" data-aos-delay="1100">
+    <img style="transform:scale(1.2);" src="assets/img/smoke-2.webp" alt="">
   </div>
 </div>
-<div class="rellax" data-rellax-speed="-2" style="bottom:0;left:20%;z-index:4">
-  <div class="particles__parallax">
-    <img src="assets/img/particles.webp" style="transform:scale(2);" alt="">
+<div class="motion-parallax" data-motion-y-start="-60" data-motion-y-end="60" data-motion-speed="-2" style="bottom:0;left:20%;z-index:4">
+  <div class="particles__parallax" data-aos="fade" data-aos-delay="1100">
+    <img style="transform:scale(2);" src="assets/img/particles.webp" alt="">
   </div>
 </div>
  
         <div class="attention">
-            <p class="text text--attention text--center">Увага! Заборонено:</p>
+                        <p data-aos="fade-up" data-aos-delay="2100" class="text text--attention text--center">Увага! Заборонено:</p>
             <div class="grid grid--3">
-                <div class="card card--attention">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="card card--attention" data-aos="fade-up" data-aos-delay="2100">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line x1="6.57523" y1="7.44427" x2="32.1175" y2="33.8941" stroke="#F6921E" stroke-width="1.6" />
                         <circle cx="20" cy="20" r="19.2" stroke="#F6921E" stroke-width="1.6" />
                         <path
@@ -206,8 +210,8 @@
                     </svg>
                     <p class="card__description">Мати при собі вибухові речовини або феєрверки</p>
                 </div>
-                <div class="card card--attention">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="card card--attention" data-aos="fade-up" data-aos-delay="2400">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line x1="6.57523" y1="7.44427" x2="32.1175" y2="33.8941" stroke="#F6921E" stroke-width="1.6" />
                         <circle cx="20" cy="20" r="19.2" stroke="#F6921E" stroke-width="1.6" />
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -215,7 +219,7 @@
                             fill="#F6921E" />
                     </svg>
                     <p class="card__description">Приходити у стані<br>спʼяніння</p></div>
-                <div class="card card--attention">
+                <div class="card card--attention" data-aos="fade-up" data-aos-delay="2700">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line x1="6.57523" y1="7.44427" x2="32.1175" y2="33.8941" stroke="#F6921E" stroke-width="1.6" />
                         <circle cx="20" cy="20" r="19.2" stroke="#F6921E" stroke-width="1.6" />
@@ -229,44 +233,44 @@
         </div>
     </div>
 </section><section id="events" class="events">
-<div class="rellax" data-rellax-speed="-2" style="top:50%;left:0;z-index:4">
-  <div class="smoke-2__parallax">
-    <img src="assets/img/smoke-2.webp" style="transform:scaleX(-1) scale(1);" alt="">
+<div class="motion-parallax" data-motion-y-start="-60" data-motion-y-end="60" data-motion-speed="-2" style="top:50%;left:-80%;z-index:3">
+  <div class="smoke-2__parallax" data-aos="fade" data-aos-delay="300">
+    <img style="transform:scaleX(-1) scale(2);" src="assets/img/smoke-2.webp" alt="">
   </div>
 </div>
  
     <div class="container">
-        <h3 class="section__title section__title--large">
+        <h3 data-aos="fade-up" data-aos-delay="300" class="section__title section__title--large">
             Попередні <span class="highlight">події</span>
         </h3>
         <div class="swiper swiper--events">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-            <div class="card--video">
+            <div class="card--video" data-aos="fade-up" data-aos-delay="600">
     <div class="plyr__video-embed">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zli_hyQx3I0?si=PJe81pJg4hn-Lvjx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>                </div>
                               <div class="swiper-slide">
-            <div class="card--video">
+            <div class="card--video" data-aos="fade-up" data-aos-delay="900">
     <div class="plyr__video-embed">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zli_hyQx3I0?si=PJe81pJg4hn-Lvjx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>                </div>
                               <div class="swiper-slide">
-            <div class="card--video">
+            <div class="card--video" data-aos="fade-up" data-aos-delay="1200">
     <div class="plyr__video-embed">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zli_hyQx3I0?si=PJe81pJg4hn-Lvjx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>                </div>
                               <div class="swiper-slide">
-            <div class="card--video">
+            <div class="card--video" data-aos="fade-up" data-aos-delay="1500">
     <div class="plyr__video-embed">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zli_hyQx3I0?si=PJe81pJg4hn-Lvjx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>                </div>
                               <div class="swiper-slide">
-            <div class="card--video">
+            <div class="card--video" data-aos="fade-up" data-aos-delay="1800">
     <div class="plyr__video-embed">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zli_hyQx3I0?si=PJe81pJg4hn-Lvjx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
@@ -277,7 +281,7 @@
                
             </div>
            
-             <div class="swiper-controls__custom">
+             <div data-aos="fade-up" data-aos-delay="600" class="swiper-controls__custom">
                <a href="#" class="btn btn--default">Всі випуски</a>
                <div class="swiper-controls__arrows">
             <div class="swiper-btn-prev btn btn--default">
@@ -297,19 +301,19 @@
         </div>
     </div>
 </section><section id="ask" class="ask">
-<div class="rellax" data-rellax-speed="-2" style="right:-50%;bottom:-50%;z-index:4">
-  <div class="smoke__parallax">
-    <img src="assets/img/smoke.webp" style="transform:scaleX(-1) scale(1.2);" alt="">
+<div class="motion-parallax" data-motion-y-start="-60" data-motion-y-end="60" data-motion-speed="-2" style="right:-50%;bottom:-50%;z-index:4">
+  <div class="smoke__parallax" data-aos="fade" data-aos-delay="300">
+    <img style="transform:scaleX(-1) scale(1.2);" src="assets/img/smoke.webp" alt="">
   </div>
 </div>
-<div class="rellax" data-rellax-speed="-3" style="bottom:-60%;left:0;z-index:4">
-  <div class="particles__parallax">
-    <img src="assets/img/particles.webp" style="transform:scaleX(-1) scale(1.6);" alt="">
+<div class="motion-parallax" data-motion-y-start="-90" data-motion-y-end="90" data-motion-speed="-3" style="bottom:-60%;left:0;z-index:4">
+  <div class="particles__parallax" data-aos="fade" data-aos-delay="300">
+    <img style="transform:scaleX(-1) scale(1.6);" src="assets/img/particles.webp" alt="">
   </div>
 </div>
  
     <div class="container">
-        <div class="form form--outline">
+        <div data-aos="zoom-in" data-aos-delay="300" class="form form--outline">
             <h3 class="section__title">
             Будь-хто може
             <span class="highlight">поставити питання</span>
@@ -328,13 +332,13 @@
 
      
       <div class="container">
-        <h3 class="section__title section__title--large">
+        <h3 data-aos="fade-up" data-aos-delay="300" class="section__title section__title--large">
             Відгуки
         </h3>
         <div class="swiper swiper--events">
             <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                    <article class="card card--review">
+                            <article class="card card--review" data-aos="fade-up" data-aos-delay="600">
                     <header>
                         <h4 class="card__title">Іван Іванов</h4>
                         <ul class="card__stars">
@@ -360,7 +364,7 @@
                     </p>
 </article>                  </div>
                               <div class="swiper-slide">
-                    <article class="card card--review">
+                            <article class="card card--review" data-aos="fade-up" data-aos-delay="900">
                     <header>
                         <h4 class="card__title">Іван Іванов</h4>
                         <ul class="card__stars">
@@ -386,7 +390,7 @@
                     </p>
 </article>                  </div>
                               <div class="swiper-slide">
-                    <article class="card card--review">
+                            <article class="card card--review" data-aos="fade-up" data-aos-delay="1200">
                     <header>
                         <h4 class="card__title">Іван Іванов</h4>
                         <ul class="card__stars">
@@ -412,7 +416,7 @@
                     </p>
 </article>                  </div>
                               <div class="swiper-slide">
-                    <article class="card card--review">
+                            <article class="card card--review" data-aos="fade-up" data-aos-delay="1500">
                     <header>
                         <h4 class="card__title">Іван Іванов</h4>
                         <ul class="card__stars">
@@ -438,7 +442,7 @@
                     </p>
 </article>                  </div>
                               <div class="swiper-slide">
-                    <article class="card card--review">
+                            <article class="card card--review" data-aos="fade-up" data-aos-delay="1800">
                     <header>
                         <h4 class="card__title">Іван Іванов</h4>
                         <ul class="card__stars">
@@ -467,7 +471,7 @@
         
             </div>
              <div class="swiper-controls__custom">
-               <a href="#" class="btn btn--default">Всі випуски</a>
+               <a href="#" class="btn btn--default" data-popup="review">Залишити відгук</a>
                <div class="swiper-controls__arrows">
             <div class="swiper-btn-prev btn btn--default">
                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -489,15 +493,15 @@
 <div class="footer-wrapper">
 <section id="contacts" class="contacts">
     <div class="container">
-        <h3 class="section__title section__title--large">
+        <h3 data-aos="fade-up" class="section__title section__title--large">
             Контакти
         </h3>
    <div class="grid grid--4">
-    <div class="contacts__item">
+    <div data-aos="fade-up" data-aos-delay="300" class="contacts__item">
             <div class="contacts__label">Контакт-центр</div>
             <a href="tel:+38 068 430 80 02" class="contacts__link">+38 068 430 80 02</a>
         </div>
-        <div class="contacts__item">
+        <div data-aos="fade-up" data-aos-delay="600" class="contacts__item">
             <div class="contacts__label">E-mail</div>
             <a href="mailto:support@ab3.army" class="contacts__link">support@ab3.army</a>
         </div>
@@ -540,14 +544,14 @@
     </div>
    
 </footer>
-<div class="rellax" data-rellax-speed="2" style="top:50%;right:0;z-index:4">
+<div class="motion-parallax" data-motion-y-start="100" data-motion-y-end="-100" data-motion-speed="2" style="top:50%;right:0;z-index:4">
   <div class="smoke__parallax">
-    <img src="assets/img/smoke.webp" style="transform:scaleX(-1) scale(2);" alt="">
+    <img style="transform:scaleX(-1) scale(2);" src="assets/img/smoke.webp" alt="">
   </div>
 </div>
-<div class="rellax" data-rellax-speed="2" style="top:0;left:0;z-index:4">
+<div class="motion-parallax" data-motion-y-start="100" data-motion-y-end="-100" data-motion-speed="2" style="top:0;left:0;z-index:4">
   <div class="particles__parallax">
-    <img src="assets/img/particles.webp" style="transform:scale(1);" alt="">
+    <img style="transform:scale(1);" src="assets/img/particles.webp" alt="">
   </div>
 </div>
 </div>
@@ -555,13 +559,17 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script src="https://cdn.plyr.io/3.8.3/plyr.polyfilled.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
 
 <!-- Плагіни -->
 <script src="assets/js/plugins/plyr.js"></script>
 <script src="assets/js/plugins/swiper.js"></script>
+<script src="assets/js/plugins/motion-parallax.js"></script>
+<script src="assets/js/plugins/aos-sequence.js"></script>
 
 <!-- Модулі -->
 <script src="assets/js/modules/header.js"></script>
+<script src="assets/js/modules/popup.js"></script>
 
 <!-- Основний скрипт -->
 <script src="assets/js/main.js"></script>

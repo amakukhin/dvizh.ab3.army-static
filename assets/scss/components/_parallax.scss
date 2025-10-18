@@ -1,12 +1,16 @@
-.rellax {
+// Base styles for Motion parallax elements
+.motion-parallax {
     position: absolute;
     width: 100%;
     z-index: 1;
     mix-blend-mode: screen;
     pointer-events: none;
     will-change: transform;
-    contain: layout paint;
 }
+
+// Motion-specific optimizations
+// Motion handles hardware acceleration automatically
+// Не додаємо додаткові transform щоб не порушити mix-blend-mode
 .smoke__parallax,
 .smoke-2__parallax {
     width: 100%;
@@ -19,7 +23,16 @@
         width: 100%;
         object-fit: cover;
     }
+}
 
+// Вимикаємо CSS анімації для Motion елементів щоб уникнути конфліктів
+.motion-parallax .smoke__parallax,
+.motion-parallax .smoke-2__parallax {
+    animation: none;
+}
+
+.motion-parallax .particles__parallax {
+    animation: none;
 }
 
 
@@ -79,7 +92,8 @@
   .particles__parallax {
     animation: none !important;
   }
-  .rellax {
+  // Motion parallax is handled by JavaScript - it checks prefers-reduced-motion automatically
+  .motion-parallax {
     transform: none !important;
   }
 }

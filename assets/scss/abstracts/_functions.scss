@@ -1,10 +1,11 @@
 @use '../abstracts/variables' as *;
 // Abstracts: Functions
 @use "sass:color";
+@use "sass:math";
 
 @function px($px, $context: $font-size-base) {
   @if unit($px) == "px" {
-    @return ($px / $context) * 1rem;
+    @return math.div($px, $context) * 1rem;
   }
   @return $px;
 }
@@ -14,8 +15,8 @@
   @return color.mix(#000000, $color, $weight: $percent);
 }
 @function stripUnit($value) {
-    @return $value / ($value * 0 + 1);
+    @return math.div($value, ($value * 0 + 1));
 }
 @function rem($pxValue) {
-    @return #{stripUnit($pxValue) / stripUnit($font-size-base)}rem;
+    @return #{math.div(stripUnit($pxValue), stripUnit($font-size-base))}rem;
 }

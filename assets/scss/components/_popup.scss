@@ -1,0 +1,152 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+
+// Popup styles (temporary fix)
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__content {
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: rgba(246, 146, 30, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin: 1.25rem;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+
+    .popup--active & {
+      transform: scale(1);
+    }
+
+    &::before {
+      background-color: rgba(246, 146, 30, 0.9);
+      border-radius: 15px;
+      border: 1px solid rgba(246, 146, 30, 0.9);
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      transition: 0.3s ease;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 1.875rem;
+    height: 1.875rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F6921E;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #FFFFFF;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    color: #F6921E;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__form {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* Rating Stars */
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
+
+  &__star {
+    width: 1.875rem;
+    height: 1.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: rgba(246, 146, 30, 0.3);
+
+    &:hover,
+    &--active {
+      color: #F6921E;
+      transform: scale(1.1);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .popup {
+    &__content {
+      padding: 1.875rem;
+      margin: 0.625rem;
+    }
+
+    &__title {
+      font-size: 1.25rem;
+    }
+  }
+
+  .rating {
+    &__star {
+      width: 1.5625rem;
+      height: 1.5625rem;
+    }
+  }
+}
