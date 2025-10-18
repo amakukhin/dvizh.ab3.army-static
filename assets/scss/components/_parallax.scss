@@ -4,7 +4,8 @@
     z-index: 1;
     mix-blend-mode: screen;
     pointer-events: none;
-
+    will-change: transform;
+    contain: layout paint;
 }
 .smoke__parallax,
 .smoke-2__parallax {
@@ -70,4 +71,15 @@
         opacity: 0.3;
     }
 
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smoke__parallax,
+  .smoke-2__parallax,
+  .particles__parallax {
+    animation: none !important;
+  }
+  .rellax {
+    transform: none !important;
+  }
 }

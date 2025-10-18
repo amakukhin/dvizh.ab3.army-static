@@ -1481,4 +1481,14 @@ section {
 .contacts__link:hover {
   color: #F6921E;
   transition: 0.3s ease;
+}k {
+  font-family: "UAFSans Expanded", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+.contacts__link:hover {
+  color: #F6921E;
+  transition: 0.3s ease;
 }

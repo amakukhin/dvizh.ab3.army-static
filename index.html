@@ -8,7 +8,7 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
 />
-<link rel="stylesheet" href="https://unpkg.com/lenis@1.3.11/dist/lenis.css">
+<!-- <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.11/dist/lenis.css"> -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.plyr.io/3.8.3/plyr.css" />
 
@@ -91,12 +91,12 @@
 
 <section id="hero" class="hero">
 
-<div class="rellax" data-rellax-speed="3" style="top:50%;left:-10%;z-index:4">
+<div class="rellax" data-rellax-speed="1" style="top:50%;left:-10%;z-index:4">
   <div class="smoke__parallax">
     <img src="assets/img/smoke.webp" style="transform:scale(1.4);" alt="">
   </div>
 </div>
-<div class="rellax" data-rellax-speed="-2" style="top:50%;right:0;z-index:4">
+<div class="rellax" data-rellax-speed="-1" style="top:50%;right:0;z-index:4">
   <div class="particles__parallax">
     <img src="assets/img/particles.webp" style="transform:scaleX(-1) scale(1.5);" alt="">
   </div>
@@ -154,7 +154,7 @@
 </section><section id="about" class="about">
 <div class="container">
         <div class="about__content">
-            <svg class="about__logo" viewBox="0 0 132 51" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <svg data-aos="fade-up" data-aos-delay="100" class="about__logo" viewBox="0 0 132 51" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
                 <use href="#logo" xlink:href="#logo"></use>
             </svg>
             <p class="section__title section__title--medium text--center">
@@ -182,7 +182,7 @@
     </article>
         </div>
 
-       <div class="rellax" data-rellax-speed="2" style="right:-50%;bottom:-30%;z-index:4">
+       <div class="rellax" data-rellax-speed="2" style="right:-50%;bottom:-70%;z-index:4">
   <div class="smoke-2__parallax">
     <img src="assets/img/smoke-2.webp" style="transform:scale(1.2);" alt="">
   </div>
@@ -229,7 +229,7 @@
         </div>
     </div>
 </section><section id="events" class="events">
-<div class="rellax" data-rellax-speed="-2" style="top:0;left:0;z-index:4">
+<div class="rellax" data-rellax-speed="-2" style="top:50%;left:0;z-index:4">
   <div class="smoke-2__parallax">
     <img src="assets/img/smoke-2.webp" style="transform:scaleX(-1) scale(1);" alt="">
   </div>
@@ -297,14 +297,14 @@
         </div>
     </div>
 </section><section id="ask" class="ask">
-<div class="rellax" data-rellax-speed="-2" style="right:-50%;bottom:0;z-index:4">
+<div class="rellax" data-rellax-speed="-2" style="right:-50%;bottom:-50%;z-index:4">
   <div class="smoke__parallax">
     <img src="assets/img/smoke.webp" style="transform:scaleX(-1) scale(1.2);" alt="">
   </div>
 </div>
-<div class="rellax" data-rellax-speed="-3" style="bottom:0;left:20%;z-index:4">
+<div class="rellax" data-rellax-speed="-3" style="bottom:-60%;left:0;z-index:4">
   <div class="particles__parallax">
-    <img src="assets/img/particles.webp" style="transform:scaleX(-1) scale(2);" alt="">
+    <img src="assets/img/particles.webp" style="transform:scaleX(-1) scale(1.6);" alt="">
   </div>
 </div>
  
@@ -540,15 +540,18 @@
     </div>
    
 </footer>
-<div class="rellax" data-rellax-speed="2" style="top:100%;right:0;z-index:4">
+<div class="rellax" data-rellax-speed="2" style="top:50%;right:0;z-index:4">
   <div class="smoke__parallax">
     <img src="assets/img/smoke.webp" style="transform:scaleX(-1) scale(2);" alt="">
   </div>
 </div>
+<div class="rellax" data-rellax-speed="2" style="top:0;left:0;z-index:4">
+  <div class="particles__parallax">
+    <img src="assets/img/particles.webp" style="transform:scale(1);" alt="">
+  </div>
+</div>
 </div>
 <!-- Бібліотеки -->
- <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script src="https://cdn.plyr.io/3.8.3/plyr.polyfilled.js"></script>
@@ -556,7 +559,6 @@
 <!-- Плагіни -->
 <script src="assets/js/plugins/plyr.js"></script>
 <script src="assets/js/plugins/swiper.js"></script>
-<script src="assets/js/plugins/lenis.js"></script>
 
 <!-- Модулі -->
 <script src="assets/js/modules/header.js"></script>
