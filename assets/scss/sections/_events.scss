@@ -6,6 +6,7 @@
 
   // Plyr: показуємо тільки велику кнопку Play на прев'ю
   .plyr--video {
+    @include shape(20px);
     &:not(.plyr--playing) {
       .plyr__controls {
         display: none;
@@ -41,17 +42,7 @@
     cursor: pointer;
   }
 }
-.events.is-dim-all {
-  position: relative;
-}
-.events.is-dim-all::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  pointer-events: none;
-  z-index: 2;
-}
+
 
 .events .card--video:hover {
   position: relative;
