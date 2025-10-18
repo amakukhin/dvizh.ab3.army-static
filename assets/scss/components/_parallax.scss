@@ -1,0 +1,73 @@
+.rellax {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    mix-blend-mode: screen;
+    pointer-events: none;
+
+}
+.smoke__parallax,
+.smoke-2__parallax {
+    width: 100%;
+    height: fit-content;
+    pointer-events: none;
+    will-change: transform, opacity;
+    animation: smoke 30s ease-in-out infinite reverse;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+}
+
+
+
+
+.particles__parallax {
+   
+    width: 100%;
+    pointer-events: none;
+    will-change: transform, opacity;
+    animation: particles 15s ease-in-out infinite reverse;
+    img {
+        width: 100%;
+            height: auto;
+            object-fit: cover;
+            
+    }
+   
+}
+
+@keyframes smoke {
+    0% {
+        opacity: 0.3;
+        transform: translateX(-25%) translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-20%) translateY(-1%);
+    }
+
+    100% {
+        opacity: 0.3;
+        transform: translateX(-25%) translateY(0);
+    }
+
+}
+
+@keyframes particles {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+
+}

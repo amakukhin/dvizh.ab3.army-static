@@ -1,0 +1,38 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+.swiper {
+    width: 100%; 
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
+.swiper-btn {
+&-prev {
+    svg {
+        transform: scaleX(-1);
+    }
+    &:hover {
+    svg {
+        path {
+            stroke:$black;
+        }
+    }
+}
+
+}
+&-next {
+    svg {
+        transform: scaleX(1);
+    }
+    &:hover {
+    svg {
+        path {
+            stroke:$black;
+        }
+    }
+}
+
+}
+}

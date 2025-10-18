@@ -1,0 +1,13 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.icon {
+    width: rem(24px);
+    height: rem(24px);
+}
+
+.socials {
+    ul {
+        @include flex-start(row, 15px);
+    }
+}

@@ -1,0 +1,160 @@
+// Abstracts: Mixins
+// Media query helper and common layout helpers
+
+@use 'variables' as *;
+@use 'functions' as *;
+
+@function _breakpoint($key) {
+	@return map-get($breakpoints, $key);
+}
+
+@mixin respond-to($break, $type: 'min') {
+  @if $type == 'min' {
+    @media (min-width: _breakpoint($break)) {
+      @content;
+    }
+  } @else {
+    @media (max-width: _breakpoint($break)) {
+      @content;
+    }
+  }
+}
+
+
+@mixin grid($cols: 12, $gap: 40) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+}
+
+@mixin flex-center($direction: row, $gap: 0) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: center;
+	justify-content: center;
+	gap: $gap;
+}
+@mixin flex-center($direction: row, $gap: 0) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: center;
+	justify-content: center;
+	gap: $gap;
+}
+@mixin flex-start($direction: row, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: flex-start;
+    justify-content: center;
+    gap: $gap;
+}
+@mixin flex-around($direction: row, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: space-around;
+    gap: $gap;
+}
+@mixin flex-between($direction: row, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: space-between;
+    gap: $gap;
+}
+
+@mixin container($max: 1400px) {
+	width: 100%;
+	max-width: 100%;
+  padding: 0 rem(20px);
+  @include respond-to('sm') {
+    max-width: 100%;
+    padding: 0 rem(20px);
+  }
+  @include respond-to('md') {
+    max-width: 100%;
+    padding: 0 rem(20px);
+  }
+  @include respond-to('lg') {
+    max-width: $max;
+    padding: 0 rem(20px);
+
+	margin-left: auto;
+	margin-right: auto;
+  }
+}
+@mixin container-fixed($max: 1400px) {
+	width: 100%;
+	max-width: 100%;
+  padding: 0 rem(20px);
+  @include respond-to('sm') {
+    max-width: 100%;
+    padding: 0 rem(20px);
+  }
+  @include respond-to('md') {
+    max-width: 100%;
+    padding: 0 rem(20px);
+  }
+  @include respond-to('lg') {
+    max-width: $max;
+    padding: 0 rem(160px);
+
+	margin-left: auto;
+	margin-right: auto;
+  }
+}
+
+
+@mixin shape($fill-size: 15px, $color: null, $alpha: null) {
+  clip-path: polygon(
+    0 #{$fill-size},
+    #{$fill-size} 0,
+    100% 0,
+    100% calc(100% - #{$fill-size}),
+    calc(100% - #{$fill-size}) 100%,
+    0 100%
+  );
+  @if $color != null {
+    @if $alpha != null {
+      background-color: rgba($color, $alpha);
+    } @else {
+      background-color: $color;
+    }
+  }
+}
+
+
+@mixin border($fill-size: 15px, $border-size: 1px, $color: null, $alpha: null) {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(
+    0 #{$fill-size},
+    #{$fill-size} 0,
+    100% 0,
+    100% calc(100% - #{$fill-size}),
+    calc(100% - #{$fill-size}) 100%,
+    0 100%,
+    0 #{$fill-size + $border-size},
+    #{$border-size} #{$fill-size + $border-size},
+    #{$border-size} calc(100% - #{$border-size}),
+    calc(100% - $fill-size - $border-size) calc(100% - #{$border-size}),
+    calc(100% - $border-size) calc(100% - #{$fill-size + $border-size}),
+    calc(100% - $border-size) #{$border-size},
+    #{$fill-size + $border-size} #{$border-size},
+    #{$border-size} #{$fill-size + $border-size}
+  );
+  pointer-events: none;
+
+  @if $color != null {
+    @if $alpha != null {
+      background-color: rgba($color, $alpha);
+    } @else {
+      background-color: $color;
+    }
+  }
+}

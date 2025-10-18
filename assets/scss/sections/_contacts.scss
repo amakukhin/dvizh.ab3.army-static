@@ -1,0 +1,27 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *; 
+@use '../abstracts/variables' as *;
+
+
+.contacts {
+   
+    .container {
+        position: relative;
+        z-index: 5; // контент поверх parallax
+    }
+    &__item {
+        @include flex-start(column, 15px)  ;
+    }
+    &__link {
+        font-family: 'UAFSans Expanded', sans-serif;
+        font-size: rem(24px);
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: .3s ease;
+        &:hover {
+            color:$orange;
+            transition: .3s ease;
+        }
+    }
+
+}

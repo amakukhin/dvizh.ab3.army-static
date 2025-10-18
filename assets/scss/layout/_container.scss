@@ -1,0 +1,23 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+section {
+    position: relative;
+    padding: rem(60px) 0;
+
+    @include respond-to('md') {
+        padding: rem(80px) 0;
+    }
+    @include respond-to('lg') {
+        padding: rem(140px) 0;
+    }
+}
+/* Layout */
+.container {
+    @include container;
+}
+.footer-wrapper {
+    position: relative;
+    overflow: hidden; // обрізаємо все, що виходить за межі (включно з parallax знизу)
+    // Parallax всередині позиціонується абсолютно і не впливає на висоту
+}

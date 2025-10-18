@@ -1,0 +1,88 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+.form {
+    @include flex-start(column, 20px);
+    width: 100%;
+    @include shape(15px);
+    display: inline-flex;
+    padding: rem(30px);
+    position: relative;
+    text-transform: uppercase;
+    transition: .3s ease;
+    color: $black;
+    z-index: 3;
+    @include respond-to('sm') {
+        padding: rem(30px);
+    }
+    @include respond-to('md') {
+        padding: rem(40px);
+    }
+    @include respond-to('lg') {
+        padding: rem(40px);
+    }
+    
+
+    &--fill {
+
+        background-color: rgba($color: $orange, $alpha: 100%);
+    }
+
+    &--outline {
+        background-color: rgba($color: $orange, $alpha: 15%);
+        backdrop-filter:blur(15px);
+        color: $orange;
+
+        &::before {
+            background-color: rgba($color: $orange, $alpha: 90%);
+            @include border(15px, 1px);
+            content: "";
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            transition: .3s ease;
+        }
+
+
+
+    }
+    &__inner {
+        @include flex-start(column, 20px);
+        width: 100%;
+       .form__input {
+    width: 100%;
+    padding: rem(14px);
+    border: 1px solid rgba($color: $orange, $alpha: 40%);
+    font-size: rem(16px);
+    background-color: rgba($color: $orange, $alpha: 15%);
+    color: rgba($color: $white, $alpha: 100%);
+    transition: .3s ease;
+    outline: none;
+    @include respond-to('sm') {
+        padding: rem(14px);
+    }
+    @include respond-to('md') {
+        padding: rem(14px);
+    }
+    @include respond-to('lg') {
+        padding: rem(20px);
+    }
+    &:focus {
+       background-color: rgba($color: $orange, $alpha: 20%); 
+       border: 1px solid rgba($color: $orange, $alpha: 100%);
+       transition: .3s ease;
+    }
+}
+
+.form__input::placeholder {
+    color: rgba($color: $white, $alpha: 50%);
+}
+    
+
+}
+}
+

@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+.hero {
+    height: 100vh;
+    padding: rem(100px) 0 rem(80px) 0;
+    @include flex-center(column, 40px);
+    @include respond-to('md') {
+        padding: rem(80px) 0 rem(40px);
+    }
+    @include respond-to('lg') {
+        @include flex-center(column, 20px);
+        padding: rem(140px) 0 rem(80px);
+    }
+    
+    
+    .container {
+        @include container-fixed(1400px);
+        @include grid(1, 40px);
+    }
+    footer {
+        @include flex-between(row, 40px);
+        width: 100%;
+    }
+    &__link {
+        font-family: 'UAFSans Expanded', sans-serif;
+        text-transform: uppercase;
+        transition: .3s ease;
+        &:hover {
+            color:$orange;
+            transition: .3s ease;
+            svg {
+                path {
+                    fill: $orange;
+                }
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,71 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+/* Buttons */
+.btn {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'UAFSans Expanded', sans-serif;
+  
+    &--default {
+      @include shape(15px);
+      background-color: rgba($orange, 0.1);
+      box-shadow: inset 0 0 10px rgba($orange, 0.8);
+      color: $orange;
+      display: inline-flex;
+      font-size: rem(14px);
+      font-weight: 700;
+      letter-spacing: .5px;
+      line-height: 1;
+      padding: rem(20px) rem(20px);
+      text-align: center;
+      text-transform: uppercase;
+      transition: .3s ease;
+      overflow: hidden; // щоб shine не виходив за межі кнопки
+  
+      &::before {
+        @include border(15px, 1px, $orange, 0.9);
+        box-shadow: 0 0 30px rgba($orange, 0.8);
+        transition: .3s ease;
+      }
+  
+      // Ефект блиску
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          transparent 0%,
+          rgba($orange, 0.4) 50%,
+          transparent 100%
+        );
+        transform: skewX(-20deg);
+      }
+  
+      &:hover {
+        background-color: rgba($orange, 0.85);
+        color: $black;
+        box-shadow: inset 0 0 10px rgba($orange, 0.8);
+  
+        &::after {
+          animation: shine 0.75s forwards;
+        }
+      }
+    }
+  }
+  
+  // keyframes
+  @keyframes shine {
+    0% {
+      left: -75%;
+    }
+    100% {
+      left: 125%;
+    }
+  }

@@ -1,0 +1,79 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+.footer-wrapper {
+    position: relative;
+ 
+}
+
+.footer {
+    @include grid(1, 20px);
+    padding: rem(30px) 0; 
+    position: relative;
+    .container {
+         @include container(1400px);
+         @include flex-start(column, rem(10px));
+         position: relative;
+         z-index: 5; // контент поверх parallax
+       
+         @include respond-to('md') {
+            @include flex-between(row, rem(10px));
+         }
+         @include respond-to('lg') {
+            @include flex-between(row, rem(10px));
+         }
+         &:nth-child(2) {
+          @include flex-between(row, rem(10px));
+         }
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      height: 40px;
+      color: $orange; // як у хедері, колір керує SVG через currentColor
+
+      @include respond-to('lg') {
+        height: 60px;
+      }
+      // підтримка як для <img>, так і для <svg class="logo__icon">
+      img {
+        height: 100%;
+        display: block;
+        width: auto;
+      }
+      .logo__icon {
+        height: 100%;
+        width: auto !important; // перекриття можливих глобальних правил svg { width:100% }
+        aspect-ratio: 132 / 51;
+        display: inline-block;
+        flex: 0 0 auto;
+      }
+  }
+    &__nav {
+      ul {
+          @include flex-start(column, rem(10px));
+          list-style: none;
+          li {
+              a {
+                  font-family: 'UAFSans Expanded', sans-serif;
+                  font-weight: 500;
+                  text-decoration: none;
+                  color: var(--white);
+                  text-transform: uppercase;
+                  transition: .3s ease;
+                  &:hover {
+                      color:$orange;
+                      transition: .3s ease;
+                  }
+              }
+          }
+          @include respond-to('md') {
+            @include flex-start(row, rem(10px));
+          }
+          @include respond-to('lg') {
+            @include flex-start(row, rem(10px));
+          }
+      }
+  }
+}

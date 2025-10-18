@@ -1,0 +1,271 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+/* Header */
+.header {
+    padding: rem(30px) 0 rem(40px) 0;
+    position: fixed;
+    width: 100%;
+    z-index: 30;
+     transition: .3s ease;
+     will-change: transform, opacity;
+     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+    &.menu-open {
+       .logo__icon {
+         
+            path {
+                transition: .3s ease;
+            
+        }
+       }
+    }
+    .container {
+        @include container(1400px);
+        @include flex-between(row, 0);
+        position: relative;
+        z-index: 2;
+        .col {
+        display: flex;
+        
+        &:nth-child(1) {
+            justify-content: flex-start;
+            flex: 0 0 auto; // колинка під лого не тягнеться, ширина = контенту
+        }
+        &:nth-child(2) {
+            flex:1;
+            justify-content: center;
+        }
+    }
+    }
+    
+    .logo {
+       display: inline-flex;
+       align-items: center;
+       flex: 0 0 auto;
+      height: 60px;
+      @include respond-to(sm, 'max') {
+        height: 40px;
+      }
+      .logo__icon {
+        height: 100%;
+        width: auto !important; // перекриття можливих глобальних правил svg { width:100% }
+        aspect-ratio: 132 / 51; // щоб ширина коректно рахувалась від висоти
+        display: inline-block;
+        flex: 0 0 auto;
+      }
+      transition: color .3s ease; // плавна зміна кольору лого
+       
+    }
+    
+    // Керування кольором лого через currentColor
+    .logo { color: $orange; }
+    &.menu-open { .logo { color: $black; } }
+
+    &.scroll {
+        transition: .3s ease;
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            will-change: opacity, transform;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        
+            /* маска-градієнт */
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+        
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0));
+            pointer-events: none;
+            
+          }
+    }
+
+    &__nav {
+
+   
+        ul {
+            @include flex-center(row, rem(40px));
+            list-style: none;
+            li {
+                a {
+                    font-family: 'UAFSans Expanded', sans-serif;
+                    font-weight: 500;
+                    text-decoration: none;
+                    color: var(--white);
+                    text-transform: uppercase;
+                    transition: .3s ease;
+                    &:hover {
+                        color:$orange;
+                        transition: .3s ease;
+                    }
+                }
+            }
+        }
+    }
+
+    .col:has(.btn) {
+        display: none;
+         
+        
+        @include respond-to(md) {
+            display: inherit;
+        }   
+        @include respond-to(lg) {
+            display: inherit;
+        }   
+    }
+    .col:has(.header__nav) {
+        display: none;
+        @include respond-to(md) {
+            display: none;
+        }   
+        @include respond-to(lg) {
+            display: inherit;
+        }   
+    }
+    .col:has(.burger-menu) {
+        display: inherit;
+
+        @include respond-to(md) {
+            display: inherit;
+        }   
+        @include respond-to(lg) {
+            display: none;
+        }   
+    }
+}
+
+
+
+// Базові стилі для бургер-меню
+  .burger-menu {
+    $self: &;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+
+    // Лінії бургер-меню
+    &__line {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: $orange;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: all 0.25s ease-in-out;
+
+        // Позиціонування ліній
+        &:nth-child(1) {
+            top: 0;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            top: 6px;
+        }
+
+        &:nth-child(4) {
+            top: 12px;
+        }
+    }
+
+    // Стилі для відкритого стану
+    &--open {
+        .burger-menu__line {
+            background: $black;
+            &:nth-child(1),
+            &:nth-child(4) {
+                top: 18px;
+                width: 0;
+                left: 50%;
+            }
+
+            &:nth-child(2) {
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    &__mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 20;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        will-change: opacity;
+        transition: opacity .4s cubic-bezier(0.4, 0, 0.2, 1); // плавніше відкриття/закриття
+        .header__nav ul {
+            @include flex-start(column, 20px);
+            
+            li a {
+                color:$black;
+                font-size: rem(24px);
+            }
+        }
+        &.active {
+            display: flex;
+            pointer-events: auto;
+            opacity: 1; // не перемикаємо display, щоб анімація відпрацьовувала
+            visibility: visible;
+            .col:has(.header__nav) {
+                @include flex-start(column, 20px);
+                flex:1;  
+                width: 100%;
+                padding: 0 rem(20px);
+            }
+            .col:has(.btn) {
+                flex:0;
+                @include flex-start(column, 20px);
+                width: 100%;
+                padding: 0 rem(20px);
+            }
+            .container {
+                transform: translateY(0) translateZ(0); 
+            backface-visibility: hidden;
+            @include flex-between(column, 20px);
+            padding: rem(20px) 0;
+           
+            }
+            .btn--default {
+                background-color: rgba($color: $black, $alpha: 15%);
+                color:$black;
+                &::before{
+                    background-color: rgba($color: $black, $alpha: 90%);
+                }
+                &:hover {
+                    color:$orange;
+                    background-color: rgba($color: $black, $alpha: 90%);
+                }
+            }
+            
+        }
+
+        @include respond-to('sm') {
+            display: block; // тримаємо у потоці для коректної анімації
+        }
+        .container {
+            @include container(100%);
+            background-color: $orange;
+            transform: translateY(100%) translateZ(0); 
+            backface-visibility: hidden;
+            will-change: transform;
+            transition: transform .4s cubic-bezier(0.4, 0, 0.2, 1); // анімація виїзду панелі
+    }
+    
+}
+
+}

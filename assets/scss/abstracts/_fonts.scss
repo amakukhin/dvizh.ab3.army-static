@@ -1,0 +1,31 @@
+$fonts: (
+  'UAFSans': (
+    400: 'Regular',
+    500: 'Medium',
+    600: 'SemiBold',
+    700: 'Bold',
+    900: 'Black'
+  ),
+  'UAFSans Expanded': (
+    500: 'ExpandedMedium',
+    600: 'ExpandedSemiBold',
+    700: 'ExpandedBold',
+    900: 'ExpandedBlack'
+  )
+);
+
+@each $family, $weights in $fonts {
+  @each $weight, $file in $weights {
+    @font-face {
+      font-family: "#{$family}";
+      font-weight: #{$weight};
+      font-style: normal;
+      font-display: swap;
+      font-feature-settings: "ss01";
+      // Files in assets/fonts are named like "UAFSans-Regular.woff2" and "UAFSans-ExpandedBold.woff2"
+      src: url('../fonts/UAFSans-#{$file}.woff2') format('woff2'),
+           url('../fonts/UAFSans-#{$file}.woff') format('woff'),
+           url('../fonts/UAFSans-#{$file}.otf') format('opentype');
+    }
+  }
+}

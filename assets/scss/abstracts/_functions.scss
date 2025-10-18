@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+// Abstracts: Functions
+@use "sass:color";
+
+@function px($px, $context: $font-size-base) {
+  @if unit($px) == "px" {
+    @return ($px / $context) * 1rem;
+  }
+  @return $px;
+}
+
+@function shade($color, $percent) {
+  // Використовуємо ключовий аргумент $weight, щоб уникнути deprecated warning
+  @return color.mix(#000000, $color, $weight: $percent);
+}
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($font-size-base)}rem;
+}

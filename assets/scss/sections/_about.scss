@@ -1,0 +1,35 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+
+.about {
+    
+    .container {
+        @include grid(1, 60px);
+        
+    }
+    &__content {
+        @include grid(1, 40px);
+    }
+    &__logo {
+        display: inline-block;
+        margin: 0 auto;
+        height: rem(120px);
+        width: auto;
+        color: $orange; // керує кольором SVG через currentColor
+        @include respond-to('sm') {
+            height: rem(120px);
+        }
+        @include respond-to('lg') {
+            height: rem(260px);
+        }
+    }
+    &__text {
+        font-size: rem(18px);
+        text-align: center;
+    }
+   
+    .attention {
+       @include grid(1, 40px);
+    }
+}

@@ -1,0 +1,84 @@
+@use '../abstracts/fonts'as *;
+@use "../abstracts/variables"as *;
+@use "../abstracts/functions"as *;
+
+
+.section__title {
+        font-family: 'UAFSans Expanded', sans-serif;
+        font-size: clamp(32px, 0.5vw + 30.4px, 40px);
+        text-transform: uppercase;
+        text-wrap: balance;
+        -webkit-text-stroke: 1px $orange;
+        text-stroke: 1px $orange;
+        color: rgba($color: $orange, $alpha: .1);
+        text-shadow: 0 0 30px rgba($orange, 0.1);
+        animation: section-title-glow 2s ease-in-out infinite alternate;
+
+        span.highlight {
+                display: inline-block;
+                color: $orange;
+
+
+        }
+
+        &--large {
+                font-size: clamp(40px, 3.33vw + 29.3px, 94px);
+
+        }
+
+        &--medium {
+                font-size: clamp(24px, 0.5vw + 22.4px, 32px);
+                font-weight: 600;
+                color: $white;
+                -webkit-text-stroke: 0px;
+                text-stroke: 0px;
+                text-shadow: 0 0 60px rgba($orange, 0.01);
+
+        }
+
+        &--small {
+                font-family: 'UAFSans', sans-serif;
+                font-size: clamp(18px, 0.125vw + 17.6px, 20px);
+                text-transform: none;
+                color: $white;
+                text-shadow: none;
+                -webkit-text-stroke: 0px;
+                text-stroke: 0px;
+        }
+
+}
+
+@keyframes section-title-glow {
+        0% {
+                text-shadow: 0 0 40px rgba($orange, 0.1);
+        }
+
+        100% {
+                text-shadow: 0 0 40px rgba($orange, 0.2);
+        }
+
+}
+
+.text {
+        font-size: rem(16px);
+        color: $white;
+        line-height: 1.6;
+        text-transform: none;
+        font-weight: 400;
+
+        &--center {
+                text-align: center;
+        }
+
+        &--attention {
+                font-family: 'UAFSans Expanded', sans-serif;
+                color: red;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-top: rem(30px);
+        }
+
+        &--center {
+                text-align: center;
+        }
+}

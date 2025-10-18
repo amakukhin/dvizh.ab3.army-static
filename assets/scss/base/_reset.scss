@@ -1,0 +1,12 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+img, picture, video, canvas { max-width: 100%; display: block; }
+button { background: transparent; border: 0; }
+ul { list-style: none; margin: 0; padding: 0; }
+a { text-decoration: none; color: inherit;
+&:hover, &:focus { text-decoration: none; color: inherit; }
+}
+h1, h2, h3, h4, h5, p {
+    margin: 0;
+    padding: 0;
+}

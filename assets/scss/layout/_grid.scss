@@ -1,0 +1,30 @@
+@use '../abstracts/_functions.scss' as *;
+@use '../abstracts/_mixins.scss' as *;
+@use '../abstracts/_variables.scss' as *;
+
+/* Grid Layout */
+.grid {
+    @include grid(1, 40px);
+  
+  
+  
+  &--2, &--3, &--4 {
+    grid-template-columns: 1fr; // 1 колонка на мобільних
+    
+    @include respond-to('sm') { // 480px+
+      grid-template-columns: repeat(2, 1fr); // 2 колонки на планшетах
+    }
+  }
+  
+  &--3, &--4 {
+    @include respond-to('md') { // 768px+
+      grid-template-columns: repeat(3, 1fr); // 3 колонки на десктопі
+    }
+  }
+  
+  &--4 {
+    @include respond-to('lg') { // 1200px+
+      grid-template-columns: repeat(4, 1fr); // 4 колонки на великих екранах
+    }
+  }
+}

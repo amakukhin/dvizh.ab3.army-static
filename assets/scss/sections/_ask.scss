@@ -1,0 +1,9 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.ask {
+    
+    .container {
+        @include container-fixed(1400px);
+    }
+}

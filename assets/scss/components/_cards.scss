@@ -1,0 +1,213 @@
+@use '../abstracts/variables'as *;
+@use '../abstracts/mixins'as *;
+@use '../abstracts/functions'as *;
+
+.card {
+    @include shape(15px, $orange, 15%);
+    color: $orange;
+    display: inline-flex;
+    letter-spacing: .5px;
+    line-height: 150%;
+    padding: rem(20px);
+    position: relative;
+    text-transform: uppercase;
+    transition: .3s ease;
+    @include respond-to('sm') {
+        padding: rem(20px);
+    }
+    @include respond-to('md') {
+        padding: rem(40px);
+    }
+    @include respond-to('lg') {
+        padding: rem(40px);
+    }
+
+    &::before {
+        @include border(15px, 1px, $orange, 90%);
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        transition: .3s ease;
+    }
+
+    &__content {
+        @include flex-between(row, 15px);
+        width: 100%;
+        .col {
+            @include flex-center(row, 20px);
+        }
+    }
+
+    &__label {
+        font-family: 'UAFSans Expanded', sans-serif;
+        font-size: rem(24px);
+        text-transform: uppercase;
+        line-height: 150%;
+        letter-spacing: 2%;
+        color: $orange;
+        text-wrap: balance;
+    }
+
+    &__description {
+        font-size: rem(16px);
+        color: $white;
+        text-transform: none;
+        font-weight: 400;
+    }
+
+    &__image {
+        img {
+            width: 100%;
+        }
+    }
+
+    &--hero {
+        @include shape(30px);
+        @include flex-start(column, 20px);
+        padding: rem(40px);
+        filter: drop-shadow(0px 0px 30px rgba($orange, 0.2));
+        animation: shadow 10s ease-in-out infinite;
+        &::before {
+            @include border(30px, 1px);
+        }
+        @include respond-to(sm, 'max') {
+            @include flex-start(column, 10px);
+            padding: rem(20px);
+            .card__content {
+                @include flex-start(column, 20px);
+            }
+        }
+        
+        .card__label {
+            font-size: rem(18px);
+            color:$white;
+        }
+        
+
+        .card__body {
+            font-size: rem(16px);
+            font-weight: 400;
+            color: $white;
+        }
+
+        .card__text {
+            @include flex-start(column, 10px);
+        }
+
+        .card__image {
+            img {
+                width: 100%;
+                @include shape(30px);
+            }
+        }
+
+
+
+    }
+    @keyframes shadow {
+        0% {
+            filter: drop-shadow(0px 0px 30px rgba($orange, 0.2));
+        }
+        50% {
+            filter: drop-shadow(0px 0px 30px rgba($orange, 0.5));
+        }
+        100% {
+            filter: drop-shadow(0px 0px 30px rgba($orange, 0.2));
+        }
+    }
+
+    &--about {
+        @include flex-start(column, 20px);
+        padding: rem(30px);
+        @include respond-to('sm') {
+            padding: rem(30px);
+        }
+        @include respond-to('md') {
+            padding: rem(40px) 30% rem(40px) rem(40px);
+        }
+        @include respond-to('lg') {
+            padding: rem(40px) 30% rem(40px) rem(40px);
+        }
+
+
+    }
+    &--attention {
+        @include flex-start(column, 20px);
+        font-size: rem(16px);
+        text-wrap: balance;
+        color: $white;
+        padding: 40px;
+        @include shape(15px, red, 15%);
+
+        &::before {
+           @include border(15px, 1px, red, 90%);
+        }
+        svg {
+            width:rem(40px);
+            height: rem(40px);
+            path {
+                fill: red !important;
+            }
+            line, circle {
+                stroke: red;
+                fill: none !important;
+            }
+        }
+    }
+
+    &--video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        height: max-content;
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            height: auto;
+            @include shape(15px);
+        }
+    }
+
+    &--form {
+        @include flex-start(column, 20px);
+        padding: rem(40px);
+
+        &__fill {
+            background: $orange;
+            color: $black;
+        }
+
+        &__outline {}
+
+    }
+
+    &--review {
+        width: 100%;
+        padding: rem(30px);
+        @include flex-start(column, 20px);
+
+        header {
+            @include flex-between(row, 10px);
+            width: 100%;
+
+            .card__stars {
+                @include flex-start(row, 5px);
+            }
+
+            .card__title {
+                color: #fff;
+                font-size: rem(20px);
+            }
+
+            .text {
+                font-size: rem(14px);
+            }
+        }
+
+
+    }
+}

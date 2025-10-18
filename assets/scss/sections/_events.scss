@@ -1,0 +1,67 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.events {
+
+  // Plyr: показуємо тільки велику кнопку Play на прев'ю
+  .plyr--video {
+    &:not(.plyr--playing) {
+      .plyr__controls {
+        display: none;
+      }
+    }
+
+    .plyr__control--overlaid {
+      display: flex; // гарантуємо видимість великої кнопки
+    }
+  }
+
+  // Hover-ефект: при наведенні на один слайд інші стають напівпрозорими
+  .swiper--events {
+    .swiper-wrapper {
+      &:hover {
+        .swiper-slide {
+          opacity: 0.5;
+        }
+      }
+
+      .swiper-slide {
+        transition: opacity 0.2s ease-in-out;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // Візуально показуємо, що по картці можна клікати
+  .card--video {
+    cursor: pointer;
+  }
+}
+.events.is-dim-all {
+  position: relative;
+}
+.events.is-dim-all::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.events .card--video:hover {
+  position: relative;
+  z-index: 3;
+}
+.swiper-controls {
+    &__custom{
+        @include flex-between(row, 10px);
+    }
+    &__arrows {
+        @include flex-between(row, 15px);
+    }
+}
