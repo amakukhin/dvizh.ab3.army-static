@@ -1673,4 +1673,46 @@ section {
 .contacts__link:hover {
   color: #F6921E;
   transition: 0.3s ease;
+}ign-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+}
+.contacts__link {
+  font-family: "UAFSans Expanded", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+.contacts__link:hover {
+  color: #F6921E;
+  transition: 0.3s ease;
+}
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .contacts__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .contacts__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 60px;
+  }
 }

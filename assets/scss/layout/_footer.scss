@@ -8,12 +8,13 @@
 }
 
 .footer {
-    @include grid(1, 20px);
+  display: grid;
     padding: rem(30px) 0; 
+    gap:30px;
     position: relative;
     .container {
          @include container(1400px);
-         @include flex-start(column, rem(10px));
+         @include flex-start(column, rem(30px));
          position: relative;
          z-index: 5; // контент поверх parallax
        
@@ -69,10 +70,10 @@
               }
           }
           @include respond-to('md') {
-            @include flex-start(row, rem(10px));
+            @include flex-start(row, rem(20px));
           }
           @include respond-to('lg') {
-            @include flex-start(row, rem(10px));
+            @include flex-start(row, rem(40px));
           }
       }
   }

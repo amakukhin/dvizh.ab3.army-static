@@ -23,5 +23,14 @@
             transition: .3s ease;
         }
     }
+    &__list {
+        @include flex(column, nowrap, flex-start, flex-start, 20px);
+        @include respond-to('md') {
+            @include flex(row, nowrap, flex-start, center, 40px);
+        }
+        @include respond-to('lg') {
+            @include flex(row, nowrap, flex-start, center, 60px);
+        }
+    }
 
 }

@@ -4,51 +4,76 @@
 
 /* Grid Layout */
 .grid {
-    @include grid(1, 40px);
-  
-  
-   &--3 {
+  display: grid;
+
+  &--auto {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:20px;
+    @include respond-to('md') {
+      grid-template-columns: repeat(2,1fr);
+    }
+    @include respond-to('lg') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &--3 {
     width: 100%;
     overflow-x: auto;
     display: flex;
+
     .card--about {
       width: 100%;
     }
+
     @include respond-to('md') {
       width: 100%;
       overflow-x: visible;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      .card--about {  
+
+      .card--about {
         width: auto;
       }
     }
+
     @include respond-to('lg') {
       width: 100%;
       overflow-x: visible;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+
       .card--about {
         width: auto;
       }
     }
-   }
-  &--2, &--4 {
+  }
+
+  &--2 {
     grid-template-columns: 1fr; // 1 колонка на мобільних
-    
-    @include respond-to('sm') { // 480px+
+
+    @include respond-to('sm') {
+      // 480px+
       grid-template-columns: repeat(2, 1fr); // 2 колонки на планшетах
     }
   }
-  
-  &--3, &--4 {
-    @include respond-to('md') { // 768px+
+
+  &--3 {
+    @include respond-to('md') {
+      // 768px+
       grid-template-columns: repeat(3, 1fr); // 3 колонки на десктопі
     }
   }
-  
+
   &--4 {
-    @include respond-to('lg') { // 1200px+
+    grid-template-columns: repeat(2, 1fr);
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('lg') {
+      // 1200px+
       grid-template-columns: repeat(4, 1fr); // 4 колонки на великих екранах
     }
   }
