@@ -1358,7 +1358,18 @@ section {
   transition: transform 0.3s ease;
   -webkit-clip-path: polygon(0 20px, 20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
           clip-path: polygon(0 20px, 20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  padding: 1.25rem;
   background-color: rgba(246, 146, 30, 0.15);
+}
+@media (min-width: 768px) {
+  .popup__content {
+    padding: 2.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .popup__content {
+    padding: 2.5rem;
+  }
 }
 .popup--active .popup__content {
   transform: scale(1);
@@ -1401,6 +1412,7 @@ section {
 }
 .popup__title {
   color: #F6921E;
+  font-family: "UAFSans Expanded", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
@@ -1439,20 +1451,6 @@ section {
   fill: currentColor;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-  .popup__content {
-    padding: 1.875rem;
-    margin: 0.625rem;
-  }
-  .popup__title {
-    font-size: 1.25rem;
-  }
-  .rating__star {
-    width: 1.5625rem;
-    height: 1.5625rem;
-  }
-}
 .hero {
   height: 100vh;
   padding: 6.25rem 0 5rem 0;

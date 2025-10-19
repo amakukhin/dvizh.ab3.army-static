@@ -34,8 +34,15 @@
     transform: scale(0.8);
     transition: transform 0.3s ease;
     @include shape(20px);
-    background-color: rgba($orange, 0.15);
 
+    padding: rem(20px);
+    background-color: rgba($orange, 0.15);
+    @include respond-to('md') {
+      padding: rem(40px);
+    }
+    @include respond-to('lg') {
+      padding: rem(40px);
+    }
     .popup--active & {
       transform: scale(1);
     }
@@ -73,8 +80,9 @@
   }
 
   &__title {
-    color: #F6921E;
-    font-size: 1.5rem;
+    color: $orange;
+    font-family: 'UAFSans Expanded', sans-serif;
+    font-size: rem(24px);
     font-weight: 700;
     margin-bottom: 1.25rem;
     text-transform: uppercase;
@@ -118,23 +126,4 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-  .popup {
-    &__content {
-      padding: 1.875rem;
-      margin: 0.625rem;
-    }
 
-    &__title {
-      font-size: 1.25rem;
-    }
-  }
-
-  .rating {
-    &__star {
-      width: 1.5625rem;
-      height: 1.5625rem;
-    }
-  }
-}
