@@ -33,6 +33,64 @@
 <path d="M68.5043 33.5401C68.5043 28.224 63.4042 27.1165 63.4042 27.1165L63.3069 27.0884C63.9114 26.9 68.1482 25.4081 67.9587 20.4254C67.7999 16.2346 64.2879 13.3907 59.2852 13.2685V13.2557H45.3604C41.5001 13.2532 39.7992 13.2532 39.7992 13.2532V15.9418L41.3311 17.4313L41.3234 24.3947H32.5064L31.3793 23.2948C31.3793 23.2948 31.4254 16.3263 31.3614 12.7771H19.8343C20.3748 13.3627 21.0101 13.8286 21.5403 14.4626H5.907C5.9403 18.0449 5.97104 22.2611 5.97104 22.2153C5.97104 26.4621 5.4869 29.632 5.4869 29.632L4.00375 28.2571C4.00375 28.2571 3.97301 29.8815 3.49912 31.9794L0 32.01V46.5148H9.98247L9.97735 41.1427H17.1728L18.9813 42.6092L27.0964 42.599V47.4212L27.8034 48.1036H29.8859L28.1748 46.4359L29.3403 46.4283L31.0719 48.101H33.1545L31.4434 46.4334L32.6089 46.4257L34.3405 48.0985H36.4231L34.7119 46.4308L35.8775 46.4232L37.6091 48.0959V42.6958H43.1421L43.119 44.1521H52.8018L51.2982 42.5965C51.2982 42.5965 58.8395 42.5965 60.3226 42.5965C62.8611 42.5965 64.5492 41.9014 65.7455 41.2038C65.246 40.7098 64.4647 39.9842 64.4647 39.9842C64.4647 39.9842 68.512 38.729 68.512 33.5351L68.5043 33.5401ZM23.2899 33.5707V35.0321L20.59 35.0372L18.7994 33.586H14.8469C16.0713 26.2559 15.869 23.3967 15.869 23.3967L23.2873 23.389V33.5732L23.2899 33.5707ZM37.604 41.3794V33.479C37.604 33.479 35.0911 33.502 33.8333 33.4714C33.7616 33.4714 33.6899 33.4612 33.6284 33.4561C33.613 31.1163 33.6694 28.7994 33.6284 26.4621H41.308L41.3285 32.9927L43.0986 34.719C43.0986 34.719 43.1062 39.2382 43.1319 41.3794H37.5988H37.604ZM49.7971 23.9619V20.8073C51.3596 20.8073 54.0903 20.7539 55.8757 20.8073C56.844 20.8379 57.5023 21.701 57.5023 22.4215C57.5023 23.0351 57.0002 23.8779 56.1139 23.9008C53.3782 23.9721 50.0302 23.9568 49.7971 23.9619ZM51.3161 34.9252V31.8139H56.0934C56.0934 31.8139 55.3019 31.0501 54.8946 30.6453C55.3557 30.3932 56.7902 30.2175 57.5279 30.9839C58.5935 32.0889 57.4741 33.1608 57.4741 33.1608L59.2852 34.9252H51.3161Z" fill="#F6921E"/>
   </symbol>
 </svg>
+       <div id="review-popup" class="popup ">
+  <div class="popup__content">
+    <button class="popup__close" aria-label="Закрити">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <h3 class="popup__title">Залишити відгук</h3>
+    <form class="popup__form form__inner " id="review-form">
+      <input type="text" name="name" placeholder="Ваше ім'я" class="form__input" required>
+      <div class="rating" id="rating">
+        <div class="rating__star" data-rating="1">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+        </div>
+        <div class="rating__star" data-rating="2">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+        </div>
+        <div class="rating__star" data-rating="3">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+        </div>
+        <div class="rating__star" data-rating="4">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+        </div>
+        <div class="rating__star" data-rating="5">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+        </div>
+      </div>
+      <textarea name="comment" placeholder="Напишіть свій відгук..." class="form__input" rows="5" required></textarea>
+      <button type="submit" class="btn btn--default">Відправити відгук</button>
+    </form>
+  </div>
+</div>
+       <div id="registration-popup" class="popup ">
+  <div class="popup__content">
+    <button class="popup__close" aria-label="Закрити">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <h3 class="popup__title">Реєстрація</h3>
+    <form class="popup__form form__inner " id="registration-form">
+      <input type="text" name="name" placeholder="Ваше ім'я" class="form__input" required>
+      <input type="tel" name="phone" placeholder="Ваш номер телефону" class="form__input" required>
+      <input type="email" name="email" placeholder="Ваша пошта" class="form__input" required>
+      <button type="submit" class="btn btn--default">Зареєструватись</button>
+    </form>
+  </div>
+</div>
 <header class="header" data-aos="fade-down" data-aos-delay="100">
 
     <div class="container">
@@ -129,7 +187,7 @@
             <p class="card__body">25.10.2025</p>
             </div>
         </div>
-            <a href="#" class="btn btn--default">Підтримати</a>
+            <a href="#" class="btn btn--default" data-popup="registration">Зареєструватись</a>
           </div>
 </article>        </div>
         <footer  data-aos="fade-up" data-aos-delay="800">
@@ -170,21 +228,19 @@
             <p data-aos="fade-up" data-aos-delay="900" class="text text--medium text--center"><strong>Вхід за донат на вході: рекомендований мінімальний донат - 500
                     грн</strong>
             </p>
-        </div>
-        <div class="grid grid--3">
-            <article class="card card--about" data-aos="fade-up" data-aos-delay="1200">
+            
+              <div class="grid grid--3">
+                            <article class="card card--about" data-aos="fade-up" data-aos-delay="1200">
     <h3 class="card__label">Історії з фронту</h3>
     <p class="card__description">Реальні розповіді бійців про війну та життя.</p>
-</article>
-<article class="card card--about" data-aos="fade-up" data-aos-delay="1500">
+</article>            <article class="card card--about" data-aos="fade-up" data-aos-delay="1500">
     <h3 class="card__label">Підтримка армії</h3>
     <p class="card__description">Твій донат — це допомога бригаді на передовій.</p>
-</article>
-<article class="card card--about" data-aos="fade-up" data-aos-delay="1800">
+</article>            <article class="card card--about" data-aos="fade-up" data-aos-delay="1800">
     <h3 class="card__label">Q&amp;A з бійцями</h3>
     <p class="card__description">Став питання — отримай чесні відповіді.</p>
-</article>
-        </div>
+</article>    </div>        </div>
+       
 
        <div class="motion-parallax" data-motion-y-start="100" data-motion-y-end="-100" data-motion-speed="2" style="right:-50%;bottom:-40%;z-index:4">
   <div class="smoke-2__parallax" data-aos="fade" data-aos-delay="1100">

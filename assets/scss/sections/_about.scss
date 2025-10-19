@@ -33,3 +33,22 @@
        @include grid(1, 40px);
     }
 }
+.about__slider {
+    width: 100%;
+    
+    .swiper--about {
+        width: 100%;
+        overflow: hidden;
+        
+        .swiper-wrapper {
+            display: flex;
+            align-items: stretch;
+        }
+        
+        .swiper-slide {
+            width: auto !important;
+            flex-shrink: 0;
+            height: auto;
+        }
+    }
+}

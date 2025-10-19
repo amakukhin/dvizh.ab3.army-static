@@ -7,8 +7,33 @@
     @include grid(1, 40px);
   
   
-  
-  &--2, &--3, &--4 {
+   &--3 {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    .card--about {
+      width: 100%;
+    }
+    @include respond-to('md') {
+      width: 100%;
+      overflow-x: visible;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      .card--about {  
+        width: auto;
+      }
+    }
+    @include respond-to('lg') {
+      width: 100%;
+      overflow-x: visible;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      .card--about {
+        width: auto;
+      }
+    }
+   }
+  &--2, &--4 {
     grid-template-columns: 1fr; // 1 колонка на мобільних
     
     @include respond-to('sm') { // 480px+

@@ -32,7 +32,7 @@ body {
     padding: 0;
     overflow-x: hidden; // обрізаємо горизонтальний скрол
     overflow-y: auto; // вертикальний скрол дозволений
-
+    text-wrap: balance;
     &::before {
         content: '';
         display: block;

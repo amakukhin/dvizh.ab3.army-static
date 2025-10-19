@@ -31,30 +31,18 @@
     width: 90%;
     max-height: 90vh;
     overflow-y: auto;
-    background-color: rgba(246, 146, 30, 0.15);
-    backdrop-filter: blur(15px);
-    border-radius: 15px;
-    padding: 2.5rem;
-    margin: 1.25rem;
     transform: scale(0.8);
     transition: transform 0.3s ease;
+    @include shape(20px);
+    background-color: rgba($orange, 0.15);
 
     .popup--active & {
       transform: scale(1);
     }
 
     &::before {
-      background-color: rgba(246, 146, 30, 0.9);
-      border-radius: 15px;
-      border: 1px solid rgba(246, 146, 30, 0.9);
-      content: "";
-      display: block;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      transition: 0.3s ease;
+      @include border(20px);
+      background-color: rgba($orange, 0.9);
     }
   }
 

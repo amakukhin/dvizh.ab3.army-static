@@ -5,7 +5,7 @@
 .card {
     @include shape(15px, $orange, 15%);
     color: $orange;
-    display: inline-flex;
+    display: flex;
     letter-spacing: .5px;
     line-height: 150%;
     padding: rem(20px);
@@ -13,6 +13,7 @@
     text-transform: uppercase;
     transition: .3s ease;
     box-shadow: inset 0 0 10px rgba($orange, 0.2);
+    width: 100%;
 
     @include respond-to('sm') {
         padding: rem(20px);
@@ -126,14 +127,16 @@
     &--about {
         @include flex-start(column, 20px);
         padding: rem(30px);
+        width: 100%;
+        box-sizing: border-box;
         @include respond-to('sm') {
             padding: rem(30px);
         }
         @include respond-to('md') {
-            padding: rem(40px) 30% rem(40px) rem(40px);
+            padding: rem(40px);
         }
         @include respond-to('lg') {
-            padding: rem(40px) 30% rem(40px) rem(40px);
+            padding: rem(40px);
         }
 
 

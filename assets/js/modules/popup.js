@@ -11,56 +11,15 @@ class ReviewPopup {
   }
 
   createPopup() {
-    const popupHTML = `
-      <div id="review-popup" class="popup">
-        <div class="popup__content">
-          <button class="popup__close" aria-label="Закрити">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <h3 class="popup__title">Залишити відгук</h3>
-          <form class="popup__form form__inner" id="review-form">
-            <input type="text" name="name" placeholder="Ваше ім'я" class="form__input" required>
-            <div class="rating" id="rating">
-              <div class="rating__star" data-rating="1">
-                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                </svg>
-              </div>
-              <div class="rating__star" data-rating="2">
-                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                </svg>
-              </div>
-              <div class="rating__star" data-rating="3">
-                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                </svg>
-              </div>
-              <div class="rating__star" data-rating="4">
-                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                </svg>
-              </div>
-              <div class="rating__star" data-rating="5">
-                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                </svg>
-              </div>
-            </div>
-            <textarea name="comment" placeholder="Напишіть свій відгук..." class="form__input" rows="5" required></textarea>
-            <button type="submit" class="btn btn--default">Відправити відгук</button>
-          </form>
-        </div>
-      </div>
-    `;
-
-    document.body.insertAdjacentHTML('beforeend', popupHTML);
+    // Використовуємо вже наявну в DOM розмітку, яку рендерить PHP-шаблон
     this.popup = document.getElementById('review-popup');
   }
 
   bindEvents() {
+    if (!this.popup) {
+      // Якщо попап не підключений у шаблоні, припиняємо ініціалізацію обробників
+      return;
+    }
     // Кнопка відкриття попапу
     const openBtn = document.querySelector('a[data-popup="review"]');
     if (openBtn) {
@@ -208,7 +167,93 @@ class ReviewPopup {
   }
 }
 
+class RegistrationPopup {
+  constructor() {
+    this.popup = null;
+    this.init();
+  }
+
+  init() {
+    this.createPopup();
+    this.bindEvents();
+  }
+
+  createPopup() {
+    this.popup = document.getElementById('registration-popup');
+  }
+
+  bindEvents() {
+    if (!this.popup) return;
+
+    const openBtn = document.querySelector('a[data-popup="registration"]');
+    if (openBtn) {
+      openBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.open();
+      });
+    }
+    const closeBtn = this.popup.querySelector('.popup__close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => this.close());
+    }
+    this.popup.addEventListener('click', (e) => {
+      if (e.target === this.popup) this.close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.popup.classList.contains('popup--active')) {
+        this.close();
+      }
+    });
+    const form = this.popup.querySelector('#registration-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        this.handleSubmit();
+      });
+    }
+  }
+
+  open() {
+    this.popup.classList.add('popup--active');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      const firstInput = this.popup.querySelector('input[name="name"]');
+      if (firstInput) firstInput.focus();
+    }, 300);
+  }
+
+  close() {
+    this.popup.classList.remove('popup--active');
+    document.body.style.overflow = '';
+    setTimeout(() => this.resetForm(), 300);
+  }
+
+  resetForm() {
+    const form = this.popup.querySelector('#registration-form');
+    if (form) form.reset();
+  }
+
+  handleSubmit() {
+    const form = this.popup.querySelector('#registration-form');
+    if (!form) return;
+    const formData = new FormData(form);
+
+    const name = formData.get('name');
+    const phone = formData.get('phone');
+    const email = formData.get('email');
+
+    if (!name || !phone || !email) {
+      alert('Будь ласка, заповніть всі поля');
+      return;
+    }
+    console.log('Реєстрація:', { name, phone, email });
+    alert('Дякуємо! Ми з вами зв’яжемось.');
+    this.close();
+  }
+}
+
 // Ініціалізуємо попап коли DOM готовий
 document.addEventListener('DOMContentLoaded', () => {
   new ReviewPopup();
+  new RegistrationPopup();
 });

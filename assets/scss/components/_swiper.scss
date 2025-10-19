@@ -2,11 +2,17 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/variables' as *;
 .swiper {
-    width: 100%; 
-    overflow: visible;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.swiper-wrapper {
     display: flex;
-    flex-direction: column;
-    gap:40px;
+}
+.swiper-slide {
+    width: auto;
+    flex: 0 0 auto; // prevent shrinking, let Swiper control width
+    height: auto;
 }
 .swiper-btn {
 &-prev {
